@@ -1,0 +1,21 @@
+
+/* FONTS */
+@font-face {
+    font-family: Futhark;
+    src: url("../fonts/Futhark.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Mukta;
+    src: url("../fonts/Mukta-Regular.ttf") format("opentype");
+}
+
+body {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: Mukta, sans-serif;
+}
