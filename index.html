@@ -2,50 +2,155 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
-    <title>Norse Runes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/vendor/aos/aos.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+  <!--FAVICON-->
+  <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+  <title>Norse Runes</title>
 </head>
 
 <body>
-    <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg" id="mainNav">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-              <button class="btn" type="submit">Search</button>
-            </form>
+  <!--PRELOADER-->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+  <!--PRELOADER END-->
+
+  <!--NAVBAR-->
+  <nav class="navbar navbar-expand-lg" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/vegvisir.png" alt="Vegvisir" class="d-inline-block align-text-top nav-logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#runesExplanation">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#runes">Runes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://www.alexsandersontech.com"
+              target="_blank">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--NAVBAR END-->
+
+  <!--RUNES EXPLANATION-->
+  <section class="runes-explanation" id="runesExplanation">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" data-aos="fade-up" data-aos-duration="1000">
+          <h3 class="text-center text-uppercase">What are runes?</h3>
+          <p class="lh-base">
+            The word rune comes from the Norse rún which means mystery or secret. Runes are an ancient form of
+            divination from druids way back when!
+          </p>
+          <p class="text-break lh-base">
+            You can use them to help guide you through problems or questions you
+            may have. There are 24 runes in a set and each one has a different meaning. There are different ways to
+            interpret the runes, but I like to use the traditional way. You can use the runes in a spread or just pull
+            one out of the bag when you need a little guidance.
+          </p>
+          <p class="lh-base">
+            I like to pull one out of the bag each morning to see
+            what the day has in store for me. I also like to use them when I have a question or problem I need help
+            with. I find that they are very accurate and helpful. I hope you enjoy using them as much as I do!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--RUNES EXPLANATION END-->
+
+  <!--RUNES-->
+  <section class="runes" id="runes">
+    <!--Create a 4x5 grid with a card in each grid for each rune-->
+    <div class="rune-columns" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+        <div class="row">
+          <h3 class="text-center text-uppercase">Runes</h3>
+          <div class="rune-search-area">
+            <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" title="Search to filter the runes">
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">Algiz</h5>
+                <img src="./assets/images/runes/algiz.png" class="card-img-top" alt="Algiz">
+                <p class="card-text">
+                  Algiz is the rune of protection and defense. It is a good sign to see in a reading.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">Ansuz</h5>
+                <img src="./assets/images/runes/ansuz.png" class="card-img-top" alt="Ansuz">
+                <p class="card-text">
+                  Ansuz is the rune of communication and wisdom. It is a good sign to see in a
+                  reading.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">Berkanan</h5>
+                <img src="./assets/images/runes/berkanan.png" class="card-img-top" alt="Berkanan">
+                <p class="card-text">
+                  Berkanan is the rune of growth and fertility. It is a good sign to see in a
+                  reading.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">Dagaz</h5>
+                <img src="./assets/images/runes/dagaz.png" class="card-img-top" alt="Dagaz">
+                <p class="card-text">
+                  Dagaz is the rune of breakthrough and transformation. It is a good sign to see in a reading.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-center footer-text"></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--FOOTER END-->
 </body>
 
 <script src="./assets/vendor/aos/aos.js"></script>
@@ -54,7 +159,7 @@
 <script src="./assets/vendor/fontawesome/js/all.min.js"></script>
 <script src="./assets/js/main.js"></script>
 <script>
-    AOS.init();
+  AOS.init();
 </script>
 
 </html>
