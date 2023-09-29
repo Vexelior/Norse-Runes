@@ -1,26 +1,75 @@
-$(document).ready(function() {
-    $(window).on('load', function() {
+$(document).ready(function () {
+    $(window).on('load', function () {
         let preloader = $('.preloader');
         preloader.fadeOut(1000);
     });
 
-    // FOOTER LOGIC \\
-    let footerText = $('.footer-text');
-    $(footerText).html(`&copy; ${new Date().getFullYear()} Alexander Sanderson`);
+    // RUNE SEARCH \\
+    let runeSearch = $('#rune-search');
+    let searchButton = $('#rune-search-button');
 
-    let buttons = $('.btn');
-    $(buttons).on('click', function() {
+    $(searchButton).on('click', function () {
+        let runeSection = $('#runes');
+        let runeName = $(runeSearch).val().toLowerCase();
+        let cards = $(runeSection).find('.card');
+
+        if (runeName === '') {
+            $(cards).show();
+            alert('Please enter a rune name.');
+            return;
+        }
+
         ButtonAction(this);
+
+        $(cards).each(function () {
+            let card = $(this);
+            let cardTitle = $(card).find('.card-title').html().toLowerCase();
+
+            if (cardTitle.includes(runeName)) {
+                $(card).show();
+            } else {
+                $(card).hide();
+            }
+        });
+
+        ResetButtonAction(this, 'Search');
     });
 
-    const ButtonAction = (button) => {
-        let width = $(button).width();
-        let height = $(button).height();
+    // BACK TO TOP \\
+    let backToTopButton = $("#back-to-top");
 
-        $(button).attr('disabled', true);
-        $(button).css('opacity', '0.5');
-        $(button).html('<i class="fa fa-spinner fa-spin"></i>');
-        $(button).width(width);
-        $(button).height(height);
-    }
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            $(backToTopButton).fadeIn();
+        } else {
+            $(backToTopButton).fadeOut();
+        }
+    });
+
+    $(backToTopButton).on('click', function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
+    });
+
+    // FOOTER \\
+    let footerText = $('.footer-text');
+    $(footerText).html(`&copy; ${new Date().getFullYear()} Alexander Sanderson`);
 });
+
+const ButtonAction = (button) => {
+    let width = $(button).width();
+    let height = $(button).height();
+
+    $(button).attr('disabled', true);
+    $(button).css('opacity', '0.5');
+    $(button).html('<i class="fa fa-spinner fa-spin"></i>');
+    $(button).width(width);
+    $(button).height(height);
+}
+
+const ResetButtonAction = (button, text) => {
+    $(button).attr('disabled', false);
+    $(button).css('opacity', '1');
+    $(button).html(text);
+}
