@@ -4,18 +4,31 @@ $(document).ready(function () {
         preloader.fadeOut(1000);
     });
 
+    let runeSection = $('#runes');
+    let cards = $(runeSection).find('.rune-card');
+
     // RUNE SEARCH \\
     let runeSearch = $('#rune-search');
     let searchButton = $('#rune-search-button');
 
     $(searchButton).on('click', function () {
-        let runeSection = $('#runes');
         let runeName = $(runeSearch).val().toLowerCase();
-        let cards = $(runeSection).find('.card');
 
         if (runeName === '') {
             $(cards).show();
-            alert('Please enter a rune name.');
+            // Reorder the cards so that they are back in alphabetical order
+            $('.rune-search-results').append(cards);
+            // Remoove any duplicate cards
+            $('.rune-search-results').find('.rune-card').each(function () {
+                let card = $(this);
+                let cardTitle = $(card).find('.card-title').html().toLowerCase();
+
+                if (cardTitle.includes(runeName)) {
+                    $(card).show();
+                } else {
+                    $(card).hide();
+                }
+            });
             return;
         }
 
@@ -31,6 +44,18 @@ $(document).ready(function () {
                 $(card).hide();
             }
         });
+
+        let hiddenCards = $(cards).filter(function () {
+            return $(this).css('display') === 'none';
+        });
+
+        let visibleCards = $(cards).filter(function () {
+            return $(this).css('display') !== 'none';
+        });
+
+        // Reorder cards so that visible cards are first
+        $('.rune-search-results').append(hiddenCards);
+        $('.rune-search-results').prepend(visibleCards);
 
         ResetButtonAction(this, 'Search');
     });
