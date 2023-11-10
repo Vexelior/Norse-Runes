@@ -98,3 +98,5 @@ const ResetButtonAction = (button, text) => {
     $(button).css('opacity', '1');
     $(button).html(text);
 }
+
+// TODO: When the user scrolls, keep the navbar at the top of the page. \\
