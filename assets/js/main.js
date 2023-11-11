@@ -99,4 +99,19 @@ const ResetButtonAction = (button, text) => {
     $(button).html(text);
 }
 
-// TODO: When the user scrolls, keep the navbar at the top of the page. \\
+const navbar = $('.navbar');
+const navbarHeight = navbar.outerHeight();
+
+$(window).on('scroll', () => {
+  const scrollTop = $(window).scrollTop();
+  if (scrollTop >= navbarHeight) {
+    navbar.removeClass('reset-nav');
+    navbar.addClass('nav-scroll');
+  } else {
+    navbar.removeClass('nav-scroll');
+    navbar.addClass('reset-nav');
+    setTimeout(function () {
+      navbar.removeClass('reset-nav');
+    }, 1000);
+  }
+});

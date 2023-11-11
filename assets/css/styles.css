@@ -60,6 +60,37 @@ body {
   }
 }
 
+.reset-nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-scroll {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.5s ease-in-out;
+    height: 80px;
+    top: 0;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes drop {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
 #mainNav {
   background-color: rgba(0, 0, 0, 0.5);
   font-family: Mukta, sans-serif;
